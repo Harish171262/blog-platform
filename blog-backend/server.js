@@ -23,8 +23,9 @@ app.get('/', (req, res) => {
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('MongoDB Connected!');
-    app.listen(process.env.PORT || 5000, () => {
-      console.log('Server running on port 5000');
+    // Render requires binding to host '0.0.0.0'
+    app.listen(process.env.PORT || 5000, '0.0.0.0', () => {
+      console.log(`Server running on port ${process.env.PORT || 5000}`);
     });
   })
   .catch((err) => {
