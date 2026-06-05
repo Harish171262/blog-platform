@@ -10,7 +10,7 @@ function Register() {
 
   const handleRegister = async () => {
     try {
-      await axios.post('https://blog-platform-hqxg.onrender.com', {
+      await axios.post('http://localhost:5000/api/auth/register', {
         username, email, password
       });
       alert('Registered Successfully! Please Login!');

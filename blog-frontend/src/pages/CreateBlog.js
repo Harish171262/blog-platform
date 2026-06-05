@@ -10,7 +10,7 @@ function CreateBlog() {
   const handleCreate = async () => {
     try {
       const token = localStorage.getItem('token');
-      await axios.post('https://blog-platform-hqxg.onrender.com', 
+      await axios.post('http://localhost:5000/api/blogs', 
         { title, content },
         { headers: { Authorization: `Bearer ${token}` } }
       );

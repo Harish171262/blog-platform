@@ -8,7 +8,7 @@ function Home() {
   const user = JSON.parse(localStorage.getItem('user'));
 
   useEffect(() => {
-    axios.get('https://blog-platform-hqxg.onrender.com')
+    axios.get('http://localhost:5000/api/blogs')
       .then(res => setBlogs(res.data))
       .catch(err => console.log(err));
   }, []);
